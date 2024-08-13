@@ -37,5 +37,6 @@ module.exports = {
       { blankLine: 'always', prev: 'import', next: '*' },
       { blankLine: 'never', prev: 'import', next: 'import' },
     ],
+    "@typescript-eslint/no-use-before-define": ["error", { "variables": true , "functions": false, "classes": false}],
   }
 }
