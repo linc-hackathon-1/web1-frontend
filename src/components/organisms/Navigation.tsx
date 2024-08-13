@@ -3,7 +3,7 @@ import {
   faHome, faRankingStar, faVideo, faFileVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import Container from '../atoms/Container';
+import Container from '@/components/atoms/Container';
 
 function Navigation() {
   return (
