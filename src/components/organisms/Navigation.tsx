@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faFileVideo } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import Container from "../atoms/Container";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHome, faRankingStar, faVideo, faFileVideo,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import Container from '@/components/atoms/Container';
 
 function Navigation() {
   return (
