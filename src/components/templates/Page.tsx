@@ -3,22 +3,22 @@ import Footer from '../organisms/Footer';
 import Header from '../organisms/Header';
 
 interface PageTemplateProps {
-  showHeader: boolean;
+  hideHeader?: boolean;
   pageName: string;
-  showFooter: boolean;
+  hideFooter?: boolean;
   children: React.ReactNode;
 }
 
 function Page({
-  showHeader, pageName, showFooter, children,
+  hideHeader = false, pageName, hideFooter = false, children,
 }: PageTemplateProps) {
   return (
     <>
-      {showHeader && <Header pageName={pageName} />}
+      {!hideHeader && <Header pageName={pageName} />}
       <article>
         {children}
       </article>
-      {showFooter && <Footer />}
+      {!hideFooter && <Footer />}
     </>
   );
 }
