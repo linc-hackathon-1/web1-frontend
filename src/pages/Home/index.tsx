@@ -1,24 +1,115 @@
-import Button from '@/components/atoms/Button';
+import bell from '@assets/bell.svg';
+import search from '@assets/search.svg';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import RankingContainer from '@components/molecules/RankingContainer';
+import Banner from '@components/organisms/Banner';
+import Grid from '@components/atoms/Grid';
+import VideoItem from '@components/molecules/VideoItem';
 import Container from '@/components/atoms/Container';
-import Profile from '@/components/organisms/Profile';
 import Page from '@/components/templates/Page';
+import { VideoItemProps } from '@/types';
+
+type RankingProps = {
+  name: string;
+  image: string;
+  likesCount: number;
+};
+
+const tags = ['B급', '행사', '정책', '관광', '이슈'];
+type Tag = typeof tags[number];
 
 function HomePage() {
+  const [rankingData, setRankingData] = useState<RankingProps[]>([]);
+  const [tag, setTag] = useState<Tag>('B급');
+  const [videoData, setVideoData] = useState<VideoItemProps[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://port-0-dream-hackertone-lzqmsbqmec4d2284.sel4.cloudtype.app/api/province/ranking-list', {
+          params: {
+            sort: 'total',
+          },
+        });
+        const videoResponse = await axios.get(`https://port-0-dream-hackertone-lzqmsbqmec4d2284.sel4.cloudtype.app/api/video/list/${tag}?page=0`);
+
+        setRankingData(response.data.provinces);
+        setVideoData(videoResponse.data.videos);
+      } catch (error) {
+        console.error('Error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, [tag]);
+
+  const itemClass = 'px-3 py-2 rounded-full border cursor-pointer border-lightGrey';
+  const selectedItemClass = 'px-3 py-2 rounded-full border bg-primary border-lightGrey';
+
   return (
-    <Page pageName="Home" hideFooter>
-      <Profile bgImg="https://picsum.photos/200" profileImg="https://picsum.photos/200" title="title" description="tjfaud" totalView={123} likeNum={1200} />
-      <Container
-        style={{ background: 'linear-gradient(120deg, #F7A6A6, #FD7070, #F29539, #FAC60E)' }}
-        direction="flex-col"
-        classes="h-95px pt-[16px] mx-[25px] mt-[13px] rounded-lg"
-      >
-        <div className="ml-[18px] text-white font-bold">
-          <p>우리 지역을</p>
-          <p>가장 쉽게 알리는 방법은?</p>
-        </div>
-        <div className="flex justify-end mt-[13px] shadow-lg">
-          <Button bgColor="bg-black" classes="mx-[14px] mb-[8px] h-[25px] text-[10px] flex items-center justify-center">비용 없이 홍보하기 &gt;</Button>
-        </div>
+    <Page pageName="Home" hideFooter hideHeader>
+      <Container size="full-width">
+        <Container size="full-width" classes="px-6 pt-16" direction="flex-col">
+          <Container
+            size="full-width"
+            alignItems="items-center"
+            justifyContents="justify-between"
+            classes="pb-6"
+          >
+            <p className="text-2xl font-bold text-black">지역감성</p>
+            <Container classes="gap-4">
+              <img src={search} alt="" className="w-4 h-4" />
+              <img src={bell} alt="" className="w-4 h-4" />
+            </Container>
+          </Container>
+
+          <Container
+            direction="flex-col"
+            classes="gap-3 py-4 rounded-lg shadow-lg mb-3"
+          >
+            {rankingData.map((item, index) => (
+              <RankingContainer
+                key={`rank-index-${index + 1}`}
+                Ranking={index + 1} // 순위는 index를 기반으로 계산
+                Img={item.image}
+                Title={item.name}
+                View={item.likesCount + Math.floor(Math.random() * 10)
+                  + 1} // likesCount를 View로 사용
+                LikeNum={item.likesCount}
+              />
+            ))}
+          </Container>
+          <Banner />
+          <p className="text-2xl font-bold text-black mt-12">주간 인기영상</p>
+          <Container size="full-width" classes="gap-2 py-3">
+            {
+              tags.map((item) => (
+                <Container
+                  justifyContents="justify-center"
+                  alignItems="items-center"
+                  key={item}
+                  classes={item === tag ? selectedItemClass : itemClass}
+                  onClick={() => setTag(item)}
+                >
+                  {item}
+                </Container>
+              ))
+            }
+          </Container>
+          <Grid columns="grid-cols-2" classes="gap-3">
+            {videoData.map((item) => (
+              <VideoItem
+                id={item.id}
+                name={item.name}
+                url={item.url}
+                likes={item.likes}
+              />
+            ))}
+          </Grid>
+
+          <Container classes="h-[100px] " />
+        </Container>
       </Container>
     </Page>
   );
