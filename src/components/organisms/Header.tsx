@@ -1,12 +1,15 @@
+import Container from '@components/atoms/Container';
+
 type HeaderProps = {
   pageName: string;
 };
 
-const Header = ({ pageName }: HeaderProps) => {
+function Header({ pageName }: HeaderProps) {
   return (
-    <>
-      <div className="flex justify-between items-center w-full h-14 bg-white shadow-md border-b border-gray-200">
-        <button className="text-gray-700 pl-4">
+    <header>
+      <Container classes="h-[57px]">
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <button className="text-gray-700 pl-4 cursor-pointer" type="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -22,13 +25,14 @@ const Header = ({ pageName }: HeaderProps) => {
             />
           </svg>
         </button>
-        <div className="flex justify-center items-center flex-grow text-sm">
-          <div>{pageName}</div>
-        </div>
-        <div className="w-10"></div> {/* 오른쪽 빈 공간 */}
-      </div>
-    </>
+        <Container justifyContents="justify-center" alignItems="items-center" classes="flex-grow text-sm">
+          {pageName}
+        </Container>
+        <div className="w-10" />
+        {/* 오른쪽 빈 공간 */}
+      </Container>
+    </header>
   );
-};
+}
 
 export default Header;
