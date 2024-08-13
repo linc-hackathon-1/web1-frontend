@@ -1,11 +1,9 @@
 import Page from '@/components/templates/Page';
-import Navigation from '@/components/organisms/Navigation';
 
 function HomePage() {
   return (
-    <Page pageName="Home">
+    <Page pageName="Home" hideFooter>
       <p>test</p>
-      <Navigation />
     </Page>
   );
 }
