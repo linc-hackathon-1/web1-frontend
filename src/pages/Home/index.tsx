@@ -1,12 +1,10 @@
 import Button from '@/components/atoms/Button';
 import Container from '@/components/atoms/Container';
-import Profile from '@/components/organisms/Profile';
 import Page from '@/components/templates/Page';
 
 function HomePage() {
   return (
     <Page pageName="Home" hideFooter>
-      <Profile bgImg="https://picsum.photos/200" profileImg="https://picsum.photos/200" title="title" description="tjfaud" totalView={123} likeNum={1200} />
       <Container
         style={{ background: 'linear-gradient(120deg, #F7A6A6, #FD7070, #F29539, #FAC60E)' }}
         direction="flex-col"
