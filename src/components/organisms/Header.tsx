@@ -1,4 +1,4 @@
-import Container from "@components/atoms/Container";
+import Container from '@components/atoms/Container';
 
 type HeaderProps = {
   pageName: string;
@@ -8,7 +8,6 @@ function Header({ pageName }: HeaderProps) {
   return (
     <header>
       <Container classes="h-[57px]">
-        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
         <button className="text-gray-700 pl-4 cursor-pointer" type="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
