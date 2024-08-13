@@ -17,7 +17,7 @@ function RankingContainer({
       <p className="ml-[21px] text-[14px] text-black font-pretendard">
         {Ranking}
       </p>
-      <img src={Img} alt="thumbnail" className="mx-[21px] h-[50px] w-[50px]" />
+      <img src={Img} alt="thumbnail" className="mx-[21px] h-[50px] w-[50px] rounded-full border" />
       <div>
         <p className="text-[16px] text-black font-pretendard">
           {Title}
