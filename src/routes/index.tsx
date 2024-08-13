@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from '@pages/Home';
-import DetailPage from '@pages/Detail';
+import ProvincePage from 'pages/Province';
 import RankingPage from '@pages/Ranking';
 import UploadPage from '@pages/Upload';
 import VideoPage from '@pages/Video';
@@ -18,7 +18,7 @@ function createRouter() {
     },
     {
       path: RouterPath.province(':provinceId'),
-      element: <DetailPage />,
+      element: <ProvincePage />,
     },
     {
       path: RouterPath.ranking(':rankingID'),

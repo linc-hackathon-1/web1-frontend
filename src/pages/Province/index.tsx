@@ -1,6 +1,6 @@
 import Page from '@components/templates/Page';
 
-function DetailPage() {
+function ProvincePage() {
   return (
     <Page pageName="Detail">
       <p>test</p>
@@ -8,4 +8,4 @@ function DetailPage() {
   );
 }
 
-export default DetailPage;
+export default ProvincePage;
