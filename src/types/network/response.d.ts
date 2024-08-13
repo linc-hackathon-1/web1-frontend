@@ -19,6 +19,8 @@ export interface ProvinceShortResponse {
 
 export interface ProvinceResponse extends ProvinceShortResponse {}
 
+export type NextVideoResponse = string;
+
 /**
  * @export
  * @interface VideoDetailResponse
