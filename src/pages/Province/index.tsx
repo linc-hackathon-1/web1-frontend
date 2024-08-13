@@ -2,7 +2,7 @@ import Page from '@components/templates/Page';
 
 function ProvincePage() {
   return (
-    <Page pageName="Detail">
+    <Page pageName="Province">
       <p>test</p>
     </Page>
   );
