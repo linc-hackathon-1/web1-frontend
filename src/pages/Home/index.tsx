@@ -104,6 +104,7 @@ function HomePage() {
                 name={item.name}
                 url={item.url}
                 likes={item.likes}
+                key={`video-key-${item.id}`}
               />
             ))}
           </Grid>
