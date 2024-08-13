@@ -3,6 +3,7 @@ import Container from '@components/atoms/Container';
 import VideoDescriptionArea
   from '@components/organisms/video/VideoDescriptionArea';
 import YouTube from 'react-youtube';
+import useFetchNextVideo from '@hooks/useFetchNextVideo';
 
 interface VideoViewProps {
   videoId: string;
@@ -10,6 +11,7 @@ interface VideoViewProps {
 
 function VideoView({ videoId }: VideoViewProps) {
   const { videoDetail } = useFetchVideo({ videoId });
+  const { nextVideoDetail } = useFetchNextVideo();
 
   return (
     <Container classes="h-[calc(100dvh-104px)] relative">
@@ -31,7 +33,7 @@ function VideoView({ videoId }: VideoViewProps) {
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
         }}
       />
-      <VideoDescriptionArea videoDetail={videoDetail} />
+      <VideoDescriptionArea videoDetail={videoDetail} nextVideoDetail={nextVideoDetail} />
     </Container>
   );
 }
