@@ -1,5 +1,5 @@
-import Page from "@/components/templates/Page";
-import Navigation from "@/components/organisms/Navigation";
+import Page from '@/components/templates/Page';
+import Navigation from '@/components/organisms/Navigation';
 
 function HomePage() {
   return (

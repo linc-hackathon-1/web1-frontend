@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { RouterPath } from "@/routes/path";
-import HomePage from "@/pages/Home";
-import DetailPage from "@/pages/Detail";
-import RankingPage from "@/pages/Ranking";
-import UploadPage from "@/pages/Upload";
-import VideoPage from "@/pages/Video";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomePage from '@pages/Home';
+import DetailPage from '@pages/Detail';
+import RankingPage from '@pages/Ranking';
+import UploadPage from '@pages/Upload';
+import VideoPage from '@pages/Video';
+import { RouterPath } from '@/routes/path';
 
 function createRouter() {
   return createBrowserRouter([
@@ -17,11 +17,11 @@ function createRouter() {
       element: <HomePage />,
     },
     {
-      path: RouterPath.province(":provinceId"),
+      path: RouterPath.province(':provinceId'),
       element: <DetailPage />,
     },
     {
-      path: RouterPath.ranking(":rankingID"),
+      path: RouterPath.ranking(':rankingID'),
       element: <RankingPage />,
     },
     {
@@ -29,7 +29,7 @@ function createRouter() {
       element: <UploadPage />,
     },
     {
-      path: RouterPath.video(":videoID"),
+      path: RouterPath.video(':videoID'),
       element: <VideoPage />,
     },
   ]);

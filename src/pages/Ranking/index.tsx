@@ -1,4 +1,4 @@
-import Page from '@/components/templates/Page';
+import Page from '@components/templates/Page';
 
 function RankingPage() {
   return (
