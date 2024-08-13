@@ -21,7 +21,7 @@ function createRouter() {
       element: <ProvincePage />,
     },
     {
-      path: RouterPath.ranking(':rankingID'),
+      path: RouterPath.ranking,
       element: <RankingPage />,
     },
     {
@@ -29,7 +29,7 @@ function createRouter() {
       element: <UploadPage />,
     },
     {
-      path: RouterPath.video(':videoID'),
+      path: RouterPath.video(':videoId'),
       element: <VideoPage />,
     },
   ]);

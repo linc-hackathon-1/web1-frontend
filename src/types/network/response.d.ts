@@ -17,6 +17,8 @@ export interface ProvinceShortResponse {
   image?: string;
 }
 
+export interface ProvinceResponse extends ProvinceShortResponse {}
+
 /**
  * @export
  * @interface VideoDetailResponse
@@ -64,4 +66,5 @@ export interface VideoDetailResponse {
    * @memberof VideoDetailResponse
    */
   description?: string;
+  nextId?: string;
 }

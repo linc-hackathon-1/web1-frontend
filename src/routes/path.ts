@@ -3,7 +3,7 @@ export const RouterPath = {
   root: '/',
   home: '/home',
   province: (provinceId: string) => `/province/${provinceId}`,
-  ranking: (rankingID: string) => `/ranking/${rankingID}`,
+  ranking: '/ranking',
   upload: '/upload',
-  video: (videoID: string) => `/video/${videoID}`,
+  video: (videoId: string) => `/video/${videoId}`,
 };

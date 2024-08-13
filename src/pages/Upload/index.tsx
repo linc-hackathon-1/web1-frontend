@@ -4,7 +4,7 @@ import Textarea from '@components/atoms/Textarea';
 
 function UploadPage() {
   return (
-    <Page pageName="Upload" hideNavigation hideFooter>
+    <Page pageName="영상 업로드" hideNavigation hideFooter>
       <p>upload</p>
       <Input
         placeholder="30자 이내의 제목을 입력해 주세요."
