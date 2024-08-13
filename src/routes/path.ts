@@ -5,5 +5,5 @@ export const RouterPath = {
   province: (provinceId: string) => `/province/${provinceId}`,
   ranking: '/ranking',
   upload: '/upload',
-  video: (videoID: string) => `/video/${videoID}`,
+  video: (videoId: string) => `/video/${videoId}`,
 };

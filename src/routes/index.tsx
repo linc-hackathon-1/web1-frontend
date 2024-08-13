@@ -29,7 +29,7 @@ function createRouter() {
       element: <UploadPage />,
     },
     {
-      path: RouterPath.video(':videoID'),
+      path: RouterPath.video(':videoId'),
       element: <VideoPage />,
     },
   ]);
