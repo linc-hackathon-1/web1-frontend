@@ -17,7 +17,7 @@ function HomePage() {
           <p>가장 쉽게 알리는 방법은?</p>
         </div>
         <div className="flex justify-end mt-[13px] shadow-lg">
-          <Button bgColor="bg-black" classes="mx-[14px] mb-[8px] w-[125px] h-[25px] text-[10px] flex items-center justify-center">비용 없이 홍보하기 &gt;</Button>
+          <Button bgColor="bg-black" classes="mx-[14px] mb-[8px] h-[25px] text-[10px] flex items-center justify-center">비용 없이 홍보하기 &gt;</Button>
         </div>
       </Container>
     </Page>
