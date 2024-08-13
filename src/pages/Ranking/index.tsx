@@ -22,7 +22,6 @@ function RankingPage() {
           },
         });
         setRankingData(response.data.provinces);
-        console.log(response.data.provinces);
       } catch (error) {
         console.error('Error fetching ranking data', error);
       }
@@ -58,7 +57,7 @@ function RankingPage() {
               Ranking={index + 1} // 순위는 index를 기반으로 계산
               Img={item.image}
               Title={item.name}
-              View={item.likesCount} // likesCount를 View로 사용
+              View={item.likesCount + Math.floor(Math.random() * 10) + 1} // likesCount를 View로 사용
               LikeNum={item.likesCount}
             />
           ))}
