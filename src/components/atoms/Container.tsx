@@ -1,4 +1,6 @@
-import { ComponentProps, HTMLAttributes, ReactNode } from 'react';
+import {
+  ComponentProps, forwardRef, HTMLAttributes, ReactNode,
+} from 'react';
 import { twMerge } from 'tailwind-merge';
 import { convertSizeToClass } from '@/utils';
 import { ContainerSize } from '@/types';
@@ -12,17 +14,23 @@ interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   justifyContents?: 'justify-between' | 'justify-around' | 'justify-center' | 'justify-start' | 'justify-end';
 }
 
-function Container({
-  children, size = 'auto', classes, direction = 'flex-row', alignItems, justifyContents, ...rest
-}: ContainerProps) {
+const Container = forwardRef<HTMLDivElement, ContainerProps>(({
+  children,
+  size = 'auto',
+  classes,
+  direction = 'flex-row',
+  alignItems,
+  justifyContents,
+  ...rest
+}, ref) => {
   const sizeClass = convertSizeToClass(size);
   const merged = twMerge('flex', sizeClass, classes, direction, alignItems, justifyContents);
 
   return (
-    <div className={merged} {...rest}>
+    <div className={merged} ref={ref} {...rest}>
       {children}
     </div>
   );
-}
+});
 
 export default Container;
