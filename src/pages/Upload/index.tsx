@@ -1,19 +1,30 @@
 import Page from '@components/templates/Page';
 import Input from '@components/atoms/Input';
 import Textarea from '@components/atoms/Textarea';
+<<<<<<< HEAD
 import Button from '@components/atoms/Button';
+=======
+import Container from '@components/atoms/Container';
+>>>>>>> 3301fd72c77f665ee8633944eceae10b7d074594
 
 function UploadPage() {
   return (
     <Page pageName="영상 업로드" hideNavigation hideFooter>
+<<<<<<< HEAD
       <div className="flex flex-col gap-3 px-[28px] py-[20px]">
         <div className="flex flex-col gap-1">
           <div className="text-[13px] font-bold">영상 제목</div>
+=======
+      <Container size="full-width">
+        <Container size="full-width" classes="px-3 gap-3" direction="flex-col">
+          <p>upload</p>
+>>>>>>> 3301fd72c77f665ee8633944eceae10b7d074594
           <Input
             placeholder="30자 이내의 제목을 입력해 주세요."
             maxLength={30}
             type="text"
           />
+<<<<<<< HEAD
         </div>
         <div className="flex flex-col gap-1">
           <div className="text-[13px] font-bold">영상 설명</div>
@@ -52,6 +63,15 @@ function UploadPage() {
 
       </div>
 
+=======
+          <Textarea
+            placeholder="100자 이내의 설명을 입력해 주세요."
+            maxLength={100}
+            rows={4}
+          />
+        </Container>
+      </Container>
+>>>>>>> 3301fd72c77f665ee8633944eceae10b7d074594
     </Page>
   );
 }
