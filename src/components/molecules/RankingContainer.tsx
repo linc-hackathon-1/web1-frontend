@@ -14,21 +14,22 @@ function RankingContainer({
 }: RankingProps) {
   return (
     <Container alignItems="items-center">
-      <p className="ml-[21px] text-[14px] text-black font-pretendard">
+      <p className="ml-[21px] text-[14px] text-black ">
         {Ranking}
       </p>
       <img src={Img} alt="thumbnail" className="mx-[21px] h-[50px] w-[50px] rounded-full border" />
       <div>
-        <p className="text-[16px] text-black font-pretendard">
+        <p className="text-[16px] text-black font-bold">
           {Title}
         </p>
-        <div className="text-[16px] text-black font-pretendard">
+        <div className="text-[14px] text-black ">
           조회수
+          {' '}
           {View}
           회
         </div>
       </div>
-      <div className="ml-auto mr-[13px]">
+      <div className="ml-auto mr-[21px]">
         <Like LikeNum={LikeNum} />
       </div>
 
