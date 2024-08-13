@@ -15,7 +15,7 @@ function Button({
 }: ButtonProps) {
   const borderClass = bgColor === 'bg-white' ? 'border border-black' : '';
   const colorClass = bgColor === 'bg-white' ? 'text-black' : 'text-white';
-  const merged = twMerge(classes, bgColor, 'py-2 px-5 rounded-md', borderClass, getHoverClass(bgColor), colorClass);
+  const merged = twMerge(classes, bgColor, 'py-2 px-5 rounded-[20px]', borderClass, getHoverClass(bgColor), colorClass);
 
   return (
     <button type="button" className={merged} {...rest}>
