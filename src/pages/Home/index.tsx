@@ -45,7 +45,7 @@ function HomePage() {
   }, [tag]);
 
   const itemClass = 'px-3 py-2 rounded-full border cursor-pointer border-lightGrey';
-  const selectedItemClass = 'px-3 py-2 rounded-full border bg-primary border-lightGrey';
+  const selectedItemClass = 'px-3 py-2 rounded-full border bg-primary border-lightGrey text-white';
 
   return (
     <Page pageName="Home" hideFooter hideHeader>
