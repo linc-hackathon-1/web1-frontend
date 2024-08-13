@@ -66,4 +66,5 @@ export interface VideoDetailResponse {
    * @memberof VideoDetailResponse
    */
   description?: string;
+  nextId?: string;
 }
