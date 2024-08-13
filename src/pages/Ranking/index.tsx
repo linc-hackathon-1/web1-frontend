@@ -38,12 +38,14 @@ function RankingPage() {
           <button
             className={`text-xs px-7 py-2 rounded-[8px] ${selectedTab === 'week' && 'bg-white'}`}
             onClick={() => setSelectedTab('week')}
+            type="button"
           >
             주간 조회수 순위
           </button>
           <button
             className={`text-xs px-7 py-2 rounded-[8px] ${selectedTab === 'total' && 'bg-white'}`}
             onClick={() => setSelectedTab('total')}
+            type="button"
           >
             누적 조회수 순위
           </button>
@@ -52,7 +54,7 @@ function RankingPage() {
         <div className="mt-[20px] flex flex-col gap-4">
           {rankingData.map((item, index) => (
             <RankingContainer
-              key={index} // index를 key로 사용
+              key={`rank-index-${index + 1}`}
               Ranking={index + 1} // 순위는 index를 기반으로 계산
               Img={item.image}
               Title={item.name}
