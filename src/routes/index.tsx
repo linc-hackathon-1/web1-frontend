@@ -21,7 +21,7 @@ function createRouter() {
       element: <ProvincePage />,
     },
     {
-      path: RouterPath.ranking(':rankingID'),
+      path: RouterPath.ranking,
       element: <RankingPage />,
     },
     {
