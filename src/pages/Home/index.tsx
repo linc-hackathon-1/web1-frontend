@@ -14,6 +14,7 @@ type RankingProps = {
   name: string;
   image: string;
   likesCount: number;
+  provinceId: number;
 };
 
 const tags = ['B급', '행사', '정책', '관광', '이슈'];
@@ -77,6 +78,7 @@ function HomePage() {
                 View={item.likesCount + Math.floor(Math.random() * 10)
                   + 1} // likesCount를 View로 사용
                 LikeNum={item.likesCount}
+                ProvinceId={item.provinceId}
               />
             ))}
           </Container>
@@ -101,10 +103,11 @@ function HomePage() {
             {videoData.map((item) => (
               <VideoItem
                 id={item.id}
-                name={item.name}
+                videoName={item.videoName}
                 url={item.url}
                 likes={item.likes}
                 key={`video-key-${item.id}`}
+                provinceName={item.provinceName}
               />
             ))}
           </Grid>

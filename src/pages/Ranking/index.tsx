@@ -62,6 +62,7 @@ function RankingPage() {
                 Title={item.name}
                 View={item.likesCount + Math.floor(Math.random() * 10) + 1} // likesCount를 View로 사용
                 LikeNum={item.likesCount}
+                ProvinceId={item.provinceId}
               />
             </Link>
           ))}
