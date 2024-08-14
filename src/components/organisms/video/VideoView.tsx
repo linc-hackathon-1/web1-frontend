@@ -14,7 +14,7 @@ function VideoView({ videoId }: VideoViewProps) {
   const { nextVideoDetail } = useFetchNextVideo();
 
   return (
-    <Container classes="h-[calc(100dvh-104px)] relative">
+    <Container classes="h-[calc(100dvh-104px)] relative bg-[#000000]">
       <YouTube
         videoId={videoId}
         opts={{
