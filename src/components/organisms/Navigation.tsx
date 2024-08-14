@@ -7,7 +7,7 @@ import Container from '@/components/atoms/Container';
 import { RouterPath } from '@/routes/path';
 
 function Navigation() {
-  const DEFAULT_VIDEO_ID = '4jWh5-L8zTM';
+  const DEFAULT_VIDEO_ID = 'EdGxLL_xjXc';
 
   return (
     <Container
