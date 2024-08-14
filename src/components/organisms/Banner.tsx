@@ -1,5 +1,7 @@
 import Container from '@components/atoms/Container';
 import Button from '@components/atoms/Button';
+import { Link } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
 
 function Banner() {
   return (
@@ -12,9 +14,16 @@ function Banner() {
         <p>우리 지역을</p>
         <p>가장 쉽게 알리는 방법은?</p>
       </div>
-      <div className="flex justify-end mt-[13px] shadow-lg">
-        <Button bgColor="bg-black" classes="mx-[14px] mb-[8px] h-[25px] text-[10px] flex items-center justify-center">비용 없이 홍보하기 &gt;</Button>
-      </div>
+      <Link to={RouterPath.upload}>
+        <div className="flex justify-end mt-[13px] shadow-lg">
+          <Button
+            bgColor="bg-black"
+            classes="mx-[14px] mb-[8px] text-[12px] flex items-center justify-center"
+          >
+            비용 없이 홍보하기 &gt;
+          </Button>
+        </div>
+      </Link>
     </Container>
   );
 }
