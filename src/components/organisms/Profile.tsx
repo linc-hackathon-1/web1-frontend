@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import Container from '../atoms/Container';
 import Like from '../molecules/Like';
 
@@ -12,8 +11,7 @@ interface ProfileProps {
   totalLikesCounts: number;
 }
 
-function Profile() {
-  const { provinceId } = useParams<{ provinceId: string }>();
+function Profile({ provinceId }: { provinceId: number }) {
   const [profileData, setProfileData] = useState<ProfileProps | null>(null);
 
   useEffect(() => {

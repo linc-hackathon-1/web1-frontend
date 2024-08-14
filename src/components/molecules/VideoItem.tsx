@@ -6,7 +6,7 @@ import { RouterPath } from '@/routes/path';
 import { VideoItemProps } from '@/types';
 
 function VideoItem({
-  id, name, likes,
+  id, videoName, likes, provinceName,
 }: VideoItemProps) {
   const thumbnail = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
 
@@ -23,18 +23,16 @@ function VideoItem({
       justifyContents="justify-end"
     >
       <Link to={RouterPath.video(id)}>
-        <Container classes="w-full px-3 bg-[rgba(0,0,0,0.3)] py-1" direction="flex-col">
+        <Container classes="w-full px-3 bg-[rgba(0,0,0,0.3)] py-1 rounded-lg" direction="flex-col">
           <Container alignItems="items-center" classes="gap-2">
             <FontAwesomeIcon icon={faHeart} style={{ color: 'white' }} className="w-5 h-5" />
             <p className="text-white ">{likes}</p>
           </Container>
           <p className="text-white">
-            {name}
+            {videoName}
           </p>
           <p className="text-lightGrey">
-            조회수
-            {Math.floor(Math.random() * 10) + 1}
-            만회
+            {provinceName}
           </p>
         </Container>
       </Link>
